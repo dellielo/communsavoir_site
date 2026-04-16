@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commun Savoir | Association d'Échange de Connaissances</title>
+    <style>
+        /* Couleurs et styles de base */
+        :root {
+            --primary: #0083f9; /* Vert écologie/savoir */
+            --secondary: #207fff; /* Bleu gris sérieux */
+            --accent: #ffde59; /* Orange pour l'action */
+            --light: #f4f7f6;
+            --dark: #2c3e50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        header {
+            background: var(--secondary);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { font-style: italic; opacity: 0.9; }
+
+        nav {
+            background: #fff;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* --- NOUVEAU STYLE POUR L'ÉVÉNEMENT AVEC IMAGE PORTRAIT --- */
+        .event-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            overflow: hidden; /* Pour que l'image respecte les bords arrondis */
+            display: flex; /* Aligne image et texte côte à côte */
+            flex-wrap: wrap; /* Permet de passer l'un sous l'autre sur mobile */
+        }
+
+        /* La partie Image (Portrait) */
+        .event-image-container {
+            flex: 1 1 300px; /* Prend au moins 300px, et s'étire */
+            max-width: 400px; /* Ne devient pas trop large sur grand écran */
+            background-color: #eee; /* Fond en attendant le chargement */
+        }
+
+        .event-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Recadre intelligemment l'image portrait pour remplir l'espace sans déformer */
+            display: block;
+        }
+
+        /* La partie Texte */
+        .event-content {
+            flex: 2 1 400px; /* Prend plus de place que l'image */
+            padding: 2rem;
+            border-left: 5px solid var(--accent); /* Le liseré orange */
+        }
+
+        /* Responsive : sur mobile, l'image passe au-dessus */
+        @media (max-width: 768px) {
+            .event-card {
+                flex-direction: column; /* Image au-dessus du texte */
+            }
+            .event-image-container {
+                max-width: 100%; /* L'image prend toute la largeur */
+                height: 250px; /* On limite sa hauteur pour ne pas tout cacher */
+            }
+            .event-content {
+                border-left: none;
+                border-top: 5px solid var(--accent); /* Le liseré passe en haut */
+            }
+        }
+        /* --------------------------------------------------------- */
+
+        .badge {
+            background: var(--accent);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover { background: #27ae60; }
+
+        /* Grille de présentation */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: var(--secondary);
+            color: white;
+            margin-top: 4rem;
+        }
+
+        .highlight { color: var(--primary); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Commun Savoir</h1>
+    <p>Partager, Apprendre, Réparer : Le savoir est un bien commun.</p>
+</header>
+
+<nav>
+    <a href="#association">L'Association</a>
+    <a href="#evenements">Nos Ateliers</a>
+    <a href="#contact">Nous rejoindre</a>
+</nav>
+
+<div class="container">
+    
+	<section id="evenements">
+        <div class="event-card">
+            
+            <div class="event-image-container">
+                <img src=".\images\affiche_communsavoir_1.jpg" alt="Atelier vélo rue d'Antibes">
+            </div>
+
+            <div class="event-content">
+                <span class="badge">Prochainement</span>
+                <h2>🚲 Atelier d'Autoréparation Vélo </h2>
+                <p>Votre frein grince ? Vos vitesses sautent ? Ou vous avez simplement peur de la crevaison ? Ne restez pas bloqué !</p>
+                
+                <p>
+                    📍 <strong>Lieu :</strong> Plage devant le Fort Carré, Antibes <br>
+                    📅 <strong>Date :</strong> Samedi 22 Avril 2026<br>
+                    ⏰ <strong>Horaires :</strong> 15h00 - 18h00
+                </p>
+                
+                <p><em>Nous fournissons les pieds d'atelier et l'outillage spécifique. Venez avec vos pièces de rechange si nécessaire !</em></p>
+                
+            </div>
+        </div>
+    </section>
+	
+    
+
+    <section id="association">
+        <h2>Qui sommes-nous ?</h2>
+        <p><strong>Commun Savoir</strong> est une association née de l'envie de lutter contre l'obsolescence et l'isolement. Nous croyons que la transmission des compétences est la clé d'une société plus résiliente.</p>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>🔍 Nos Objectifs</h3>
+                <ul>
+                    <li>Promouvoir l'autonomie technique.</li>
+                    <li>Réduire les déchets via la réparation.</li>
+                    <li>Créer des lieux d'échange intergénérationnels.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>🤝 Devenir Membre</h3>
+                <p>Que vous soyez expert en mécanique, pro de la couture ou simplement curieux d'apprendre, votre place est parmi nous !</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer id="contact">
+    <p><strong>Commun Savoir</strong> - Association loi 1901</p>
+    <p>Contact : <a href="mailto:communsavoir@gmail.com" style="color: white;">communsavoir@gmail.com</a></p>
+    <p>&copy; 2026 - Réparons demain ensemble.</p>
+</footer>
+
+</body>
+</html>
