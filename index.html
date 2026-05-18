@@ -130,6 +130,24 @@
             border: none;
         }
 
+        .join-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 2rem;
+        }
+
+        .helloasso-iframe-container {
+            position: relative;
+            width: 100%;
+            height: 700px; /* Hauteur confortable pour le formulaire HelloAsso */
+            margin-top: 1.5rem;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
         /* Responsive : sur mobile, l'image passe au-dessus */
         @media (max-width: 768px) {
             .event-card {
@@ -235,6 +253,7 @@
     </section>
 
     <!-- SECTION QUI SOMMES-NOUS -->
+    <!-- SECTION QUI SOMMES-NOUS -->
     <section id="association">
         <h2>Qui sommes-nous ?</h2>
         <p><strong>Commun Savoir</strong> est une association née de l'envie de lutter contre l'obsolescence et l'isolement. Nous croyons que la transmission des compétences est la clé d'une société plus résiliente.</p>
@@ -260,8 +279,24 @@
                 </ul>
             </div>
             <div class="card">
-                <h3>🤝 Devenir Membre</h3>
-                <p> Que vous soyez passionné.e de mécanique, adepte de couture ou simplement curieux d'apprendre et de partager diverses compétences, votre place est parmi nous !</p>
+                <h3>💡 Notre Philosophie</h3>
+                <p>Le partage de connaissances est au cœur de notre démarche. Ici, pas de clients, uniquement des participants qui apprennent ensemble à faire par eux-mêmes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOUVELLE SECTION ADHÉSION RÉORGANISÉE -->
+    <section id="rejoindre">
+        <h2>Devenir Membre</h2>
+        <div class="join-container">
+            <h3>🤝 Rejoindre l'aventure Commun Savoir</h3>
+            <p>Que vous soyez expert en mécanique, pro du numérique, adepte de la couture ou simplement curieux d'apprendre et de soutenir nos actions, votre place est parmi nous ! L'adhésion vous permet de participer à tous nos ateliers à l'année et d'accéder à l'outillage partagé.</p>
+            
+            <!-- Intégration de l'iframe HelloAsso -->
+            <div class="helloasso-iframe-container">
+                <!-- ⚠️ Remplacez l'URL ci-dessous par l'URL d'intégration de VOTRE formulaire HelloAsso (Lien sous forme widget/iframe) -->
+                <iframe id="haWidget" allowtransparency="true" scrolling="auto" src="https://www.helloasso.com/associations/commun-savoir/adhesions/adhesion-commun-savoir/widget" style="width: 100%; height: 750px; border: none;" onload="window.addEventListener('message', function(e) { const dataHeight = e.data.height; const haWidgetElement = document.getElementById('haWidget'); 
+  if (dataHeight > parseFloat(haWidgetElement.height || 0)) { haWidgetElement.height = dataHeight + 'px';}})"></iframe>
             </div>
         </div>
     </section>
