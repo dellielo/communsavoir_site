@@ -10,9 +10,6 @@
     <meta name="keywords" content="association, savoir, vélo, autoréparation, partage, éducation, culture, commun savoir, ateliers Antibes, apprentissage">
     <meta name="author" content="Commun Savoir">
 
-    <!-- Configuration Mobile -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Open Graph (Facebook, LinkedIn, Discord) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://communsavoir.org/">
@@ -31,9 +28,9 @@
     <style>
         /* Couleurs et styles de base */
         :root {
-            --primary: #0083f9; /* Vert écologie/savoir */
-            --secondary: #207fff; /* Bleu gris sérieux */
-            --accent: #ffde59; /* Orange pour l'action */
+            --primary: #0083f9; 
+            --secondary: #207fff; 
+            --accent: #ffde59; 
             --light: #f4f7f6;
             --dark: #2c3e50;
         }
@@ -79,75 +76,84 @@
             padding: 0 1rem;
         }
 
-        /* --- NOUVEAU STYLE POUR L'ÉVÉNEMENT AVEC IMAGE PORTRAIT --- */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        section h2 {
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- STYLE POUR L'ÉVÉNEMENT AVEC IMAGE PORTRAIT --- */
         .event-card {
             background: white;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             margin-bottom: 2rem;
-            overflow: hidden; /* Pour que l'image respecte les bords arrondis */
-            display: flex; /* Aligne image et texte côte à côte */
-            flex-wrap: wrap; /* Permet de passer l'un sous l'autre sur mobile */
+            overflow: hidden; 
+            display: flex; 
+            flex-wrap: wrap; 
         }
 
-        /* La partie Image (Portrait) */
         .event-image-container {
-            flex: 1 1 300px; /* Prend au moins 300px, et s'étire */
-            max-width: 400px; /* Ne devient pas trop large sur grand écran */
-            background-color: #eee; /* Fond en attendant le chargement */
+            flex: 1 1 300px; 
+            max-width: 400px; 
+            background-color: #eee; 
         }
 
         .event-image-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Recadre intelligemment l'image portrait pour remplir l'espace sans déformer */
+            object-fit: cover; 
             display: block;
         }
 
-        /* La partie Texte */
         .event-content {
-            flex: 2 1 400px; /* Prend plus de place que l'image */
+            flex: 2 1 400px; 
             padding: 2rem;
-            border-left: 5px solid var(--accent); /* Le liseré orange */
+            border-left: 5px solid var(--accent); 
+        }
+
+        /* --- STYLE POUR LA SECTION CALENDRIER (RESPONSIVE) --- */
+        .calendar-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .calendar-container iframe {
+            width: 100%;
+            max-width: 100%;
+            border: none;
         }
 
         /* Responsive : sur mobile, l'image passe au-dessus */
         @media (max-width: 768px) {
             .event-card {
-                flex-direction: column; /* Image au-dessus du texte */
+                flex-direction: column; 
             }
             .event-image-container {
-                max-width: 100%; /* L'image prend toute la largeur */
-                height: 250px; /* On limite sa hauteur pour ne pas tout cacher */
+                max-width: 100%; 
+                height: 250px; 
             }
             .event-content {
                 border-left: none;
-                border-top: 5px solid var(--accent); /* Le liseré passe en haut */
+                border-top: 5px solid var(--accent); 
             }
         }
-        /* --------------------------------------------------------- */
 
         .badge {
             background: var(--accent);
-            color: white;
+            color: #2c3e50;
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.9rem;
             text-transform: uppercase;
+            font-weight: bold;
         }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 1rem;
-            transition: background 0.3s;
-        }
-
-        .cta-button:hover { background: #27ae60; }
 
         /* Grille de présentation */
         .grid {
@@ -170,8 +176,6 @@
             color: white;
             margin-top: 4rem;
         }
-
-        .highlight { color: var(--primary); font-weight: bold; }
     </style>
 </head>
 <body>
@@ -183,39 +187,54 @@
 
 <nav>
     <a href="#association">L'Association</a>
-    <a href="#evenements">Nos Ateliers</a>
+    <a href="#evenements">Les Ateliers</a>
+    <a href="#calendrier">Calendrier</a> <!-- Nouvel onglet -->
     <a href="#contact">Nous rejoindre</a>
 </nav>
 
-<div class="container">
+<main class="container">
     
-	<section id="evenements">
+    <!-- SECTION PROCHAIN ATELIER -->
+    <section id="evenements">
+        <h2>Atelier réparation vélo participatif</h2>
         <div class="event-card">
-            
             <div class="event-image-container">
-                <img src="images/affiche_communsavoir_2.jpg" alt="Atelier vélo rue d'Antibes">
+                <img src="images/communsavoir_velo.png" alt="Atelier d'autoréparation de vélo en plein air à Antibes">
             </div>
 
             <div class="event-content">
                 <span class="badge">Prochainement</span>
-                <h2>🚲 Atelier d'Autoréparation Vélo </h2>
+                <h3>🚲 Atelier d'Autoréparation Vélo </h3>
                 <p>Votre frein grince ? Vos vitesses sautent ? Ou vous avez simplement peur de la crevaison ? Ne restez pas bloqué !</p>
-                <p> Venez apprendre la mécanique ou partager un moment entre passionnés du vélo au quotidien. </p>
+                <p>Venez apprendre la mécanique ou partager un moment entre passionnés du vélo au quotidien.</p>
                 
                 <p>
                     📍 <strong>Lieu :</strong> Plage devant le Fort Carré, Antibes <br>
-                    📅 <strong>Date :</strong> Mardi 5 mai 2026 <br>
-                    ⏰ <strong>Horaires :</strong> 17h00 - 20h00
+                    📅 <strong>Date :</strong> Mercredi 27 mai 2026 <br>
+                    ⏰ <strong>Horaires :</strong> 16h00 - 19h00
                 </p>
                 
-                <p><em>Nous fournissons les pieds d'atelier et l'outillage spécifique. Venez avec vos pièces de rechange si nécessaire !</em></p>
-                
+                <p><em>Pieds d'atelier et outils spécifiques sont mis à disposition sur place. Venez avec vos pièces de rechange si nécessaire ! Vous serez accompagnés par des bénévoles. </em></p>
             </div>
         </div>
     </section>
-	
     
+    <!-- NOUVELLE SECTION CALENDRIER -->
+    <section id="calendrier">
+        <h2>Agenda des activités</h2>
+        <p>Retrouvez toutes nos dates, ateliers de réparation et moments d'échange à Antibes directement sur notre planning partagé :</p>
+        <div class="calendar-container">
+                    <iframe 
+                        src="https://framagenda.org/apps/calendar/embed/x2bkL22twENNZERe" 
+                        style="border:0" 
+                        width="100%" 
+                        height="600" 
+                        allowfullscreen>
+                    </iframe>
+        </div>
+    </section>
 
+    <!-- SECTION QUI SOMMES-NOUS -->
     <section id="association">
         <h2>Qui sommes-nous ?</h2>
         <p><strong>Commun Savoir</strong> est une association née de l'envie de lutter contre l'obsolescence et l'isolement. Nous croyons que la transmission des compétences est la clé d'une société plus résiliente.</p>
@@ -224,24 +243,34 @@
             <div class="card">
                 <h3>🔍 Nos Objectifs</h3>
                 <ul>
-                    <li>Promouvoir l'autonomie technique.</li>
-                    <li>Réduire les déchets via la réparation.</li>
-                    <li>Créer des lieux d'échange intergénérationnels.</li>
+                    <li> De fédérer un maximum de personnes autour d’un réseau de partage, de solidarité et
+                    d’échange de connaissances théoriques, d’expériences et de savoir-faire manuels
+                    (artistiques, artisanaux, agricoles, etc.).</li>
+                    <li> De favoriser l’émancipation et l’autonomie, individuelles comme collectives, des
+                    personnes participantes, à travers d’ateliers participatifs, de chantiers-écoles, de
+                    sorties et divers temps de rencontre.</li>
+                    <li> De promouvoir et sensibiliser à des pratiques respectueuses de l’environnement et de
+                    l’ensemble des êtres vivants (recyclage, réemploi, revalorisation, réparation,
+                    sobriété, low-tech, circuits locaux, mobilité douce).</li>
+                    <li> De s’inspirer et d’expérimenter des outils issus de l’éducation populaire.</li>
+                    <li> D’encourager et de renforcer l’esprit critique et l’ouverture, tout en luttant contre toute
+                    forme de discrimination ou d’exclusion.</li>
+                    <li> De revaloriser l’art, l’artisanat et l’agriculture en créant des passerelles entre un
+                    public varié et ces pratiques manuelles.</li>
                 </ul>
             </div>
             <div class="card">
                 <h3>🤝 Devenir Membre</h3>
-                <p>Que vous soyez expert en mécanique, pro de la couture ou simplement curieux d'apprendre, votre place est parmi nous !</p>
+                <p> Que vous soyez passionné.e de mécanique, adepte de couture ou simplement curieux d'apprendre et de partager diverses compétences, votre place est parmi nous !</p>
             </div>
         </div>
     </section>
 
-</div>
+</main>
 
 <footer id="contact">
-    <p><strong>Commun Savoir</strong> - Association loi 1901</p>
     <p>Contact : <a href="mailto:contact@communsavoir.org" style="color: white;">contact@communsavoir.org</a></p>
-    <p>&copy; 2026 - Réparons demain ensemble.</p>
+    <p>&copy; 2026 - <strong>Commun Savoir</strong> - Association loi 1901 </p>
 </footer>
 
 </body>
