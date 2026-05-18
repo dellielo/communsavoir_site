@@ -173,18 +173,23 @@
             font-weight: bold;
         }
 
-        /* Grille de présentation */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
+    
 
-        .card {
+        .card-full {
             background: white;
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-top: 1.5rem;
+        }
+
+        .card-full ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .card-full li {
+            margin-bottom: 0.5rem;
         }
 
         footer {
@@ -258,8 +263,7 @@
         <h2>Qui sommes-nous ?</h2>
         <p><strong>Commun Savoir</strong> est une association née de l'envie de lutter contre l'obsolescence et l'isolement. Nous croyons que la transmission des compétences est la clé d'une société plus résiliente.</p>
         
-        <div class="grid">
-            <div class="card">
+        <div class="card-full">
                 <h3>🔍 Nos Objectifs</h3>
                 <ul>
                     <li> De fédérer un maximum de personnes autour d’un réseau de partage, de solidarité et
@@ -277,12 +281,8 @@
                     <li> De revaloriser l’art, l’artisanat et l’agriculture en créant des passerelles entre un
                     public varié et ces pratiques manuelles.</li>
                 </ul>
-            </div>
-            <div class="card">
-                <h3>💡 Notre Philosophie</h3>
-                <p>Le partage de connaissances est au cœur de notre démarche. Ici, pas de clients, uniquement des participants qui apprennent ensemble à faire par eux-mêmes.</p>
-            </div>
         </div>
+
     </section>
 
     <!-- NOUVELLE SECTION ADHÉSION RÉORGANISÉE -->
