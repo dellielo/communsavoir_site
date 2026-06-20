@@ -23,6 +23,9 @@
     <meta name="twitter:description" content="Association de partage de connaissances. Retrouvez nos ateliers et événements à Antibes.">
     <meta name="twitter:image" content="https://communsavoir.org/images/communsavoir.jpg">
 
+    <!-- Favicon / Icône du site dans le navigateur -->
+    <link rel="icon" type="image/jpeg" href="images/logo_communsavoir.jpg">
+
     <!-- Balise Canonique -->
     <link rel="canonical" href="https://communsavoir.org/">
     <style>
@@ -43,15 +46,38 @@
             background-color: var(--light);
         }
 
+        /* --- STYLE DU HEADER ADAPTÉ POUR LE LOGO --- */
         header {
             background: var(--secondary);
             color: white;
             padding: 2rem 1rem;
-            text-align: center;
+        }
+
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .header-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%; /* Rend le logo rond si désiré, à enlever si besoin */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            border: 2px solid white;
+        }
+
+        .header-text {
+            text-align: left;
         }
 
         header h1 { margin: 0; font-size: 2.5rem; }
-        header p { font-style: italic; opacity: 0.9; }
+        header p { margin: 0.5rem 0 0 0; font-style: italic; opacity: 0.9; }
 
         nav {
             background: #fff;
@@ -141,15 +167,22 @@
         .helloasso-iframe-container {
             position: relative;
             width: 100%;
-            height: 700px; /* Hauteur confortable pour le formulaire HelloAsso */
+            height: 700px; 
             margin-top: 1.5rem;
             border: 1px solid #eee;
             border-radius: 6px;
             overflow: hidden;
         }
 
-        /* Responsive : sur mobile, l'image passe au-dessus */
+        /* Responsive : sur mobile, l'image passe au-dessus et le header se recentre */
         @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-text {
+                text-align: center;
+            }
             .event-card {
                 flex-direction: column; 
             }
@@ -172,8 +205,6 @@
             text-transform: uppercase;
             font-weight: bold;
         }
-
-    
 
         .card-full {
             background: white;
@@ -204,14 +235,20 @@
 <body>
 
 <header>
-    <h1>Commun Savoir</h1>
-    <p>Partager, Apprendre, Réparer : Le savoir est un bien commun.</p>
+    <div class="header-container">
+        <!-- Logo de l'association intégré ici -->
+        <img src="images/logo_communsavoir.jpg" alt="Logo Commun Savoir" class="header-logo">
+        <div class="header-text">
+            <h1>Commun Savoir</h1>
+            <p>Partager, Apprendre, Réparer : Le savoir est un bien commun.</p>
+        </div>
+    </div>
 </header>
 
 <nav>
     <a href="#association">L'Association</a>
     <a href="#evenements">Les Ateliers</a>
-    <a href="#calendrier">Calendrier</a> <!-- Nouvel onglet -->
+    <a href="#calendrier">Calendrier</a> 
     <a href="#rejoindre">Nous rejoindre</a>
 </nav>
 
@@ -233,7 +270,7 @@
                 
                 <p>
                     📍 <strong>Lieu :</strong> Plage devant le Fort Carré, Antibes <br>
-                    📅 <strong>Date :</strong> Mercredi 27 mai 2026 <br>
+                    📅 <strong>Date :</strong> Mardi 30 juin 2026 <br>
                     ⏰ <strong>Horaires :</strong> 16h00 - 19h00
                 </p>
                 
@@ -242,10 +279,10 @@
         </div>
     </section>
     
-    <!-- NOUVELLE SECTION CALENDRIER -->
+    <!-- SECTION CALENDRIER -->
     <section id="calendrier">
         <h2>Agenda des activités</h2>
-        <p>Retrouvez toutes nos dates, ateliers de réparation et moments d'échange à Antibes directement sur notre planning partagé :</p>
+        <p>Retrouvez toutes nos dates, ateliers de réparation et moments d'échange à Antibes directement sur notre planning partagé : (les dates sont mises à jour au fil des mois)</p>
         <div class="calendar-container">
                     <iframe 
                         src="https://framagenda.org/apps/calendar/embed/x2bkL22twENNZERe/listMonth/now" 
@@ -258,7 +295,6 @@
     </section>
 
     <!-- SECTION QUI SOMMES-NOUS -->
-    <!-- SECTION QUI SOMMES-NOUS -->
     <section id="association">
         <h2>Qui sommes-nous ?</h2>
         <p><strong>Commun Savoir</strong> est une association née de l'envie de lutter contre l'obsolescence et l'isolement. Nous croyons que la transmission des compétences est la clé d'une société plus résiliente.</p>
@@ -266,35 +302,24 @@
         <div class="card-full">
                 <h3>🔍 Nos Objectifs</h3>
                 <ul>
-                    <li> De fédérer un maximum de personnes autour d’un réseau de partage, de solidarité et
-                    d’échange de connaissances théoriques, d’expériences et de savoir-faire manuels
-                    (artistiques, artisanaux, agricoles, etc.).</li>
-                    <li> De favoriser l’émancipation et l’autonomie, individuelles comme collectives, des
-                    personnes participantes, à travers d’ateliers participatifs, de chantiers-écoles, de
-                    sorties et divers temps de rencontre.</li>
-                    <li> De promouvoir et sensibiliser à des pratiques respectueuses de l’environnement et de
-                    l’ensemble des êtres vivants (recyclage, réemploi, revalorisation, réparation,
-                    sobriété, low-tech, circuits locaux, mobilité douce).</li>
+                    <li> De fédérer un maximum de personnes autour d’un réseau de partage, de solidarité et d’échange de connaissances théoriques, d’expériences et de savoir-faire manuels (artistiques, artisanaux, agricoles, etc.).</li>
+                    <li> De favoriser l’émancipation et l’autonomie, individuelles comme collectives, des personnes participantes, à travers d’ateliers participatifs, de chantiers-écoles, de sorties et divers temps de rencontre.</li>
+                    <li> De promouvoir et sensibiliser à des pratiques respectueuses de l’environnement et de l’ensemble des êtres vivants (recyclage, réemploi, revalorisation, réparation, sobriété, low-tech, circuits locaux, mobility douce).</li>
                     <li> De s’inspirer et d’expérimenter des outils issus de l’éducation populaire.</li>
-                    <li> D’encourager et de renforcer l’esprit critique et l’ouverture, tout en luttant contre toute
-                    forme de discrimination ou d’exclusion.</li>
-                    <li> De revaloriser l’art, l’artisanat et l’agriculture en créant des passerelles entre un
-                    public varié et ces pratiques manuelles.</li>
+                    <li> D’encourager et de renforcer l’esprit critique et l’ouverture, tout en luttant contre toute forme de discrimination ou d’exclusion.</li>
+                    <li> De revaloriser l’art, l’artisanat et l’agriculture en créant des passerelles entre un public varié et ces pratiques manuelles.</li>
                 </ul>
         </div>
-
     </section>
 
-    <!-- NOUVELLE SECTION ADHÉSION RÉORGANISÉE -->
+    <!-- SECTION ADHÉSION -->
     <section id="rejoindre">
         <h2>Devenir Membre</h2>
         <div class="join-container">
             <h3>🤝 Rejoindre l'aventure Commun Savoir</h3>
             <p>Que vous soyez expert en mécanique, pro du numérique, adepte de la couture ou simplement curieux d'apprendre et de soutenir nos actions, votre place est parmi nous ! L'adhésion vous permet de participer à tous nos ateliers à l'année et d'accéder à l'outillage partagé.</p>
             
-            <!-- Intégration de l'iframe HelloAsso -->
             <div class="helloasso-iframe-container">
-                <!-- ⚠️ Remplacez l'URL ci-dessous par l'URL d'intégration de VOTRE formulaire HelloAsso (Lien sous forme widget/iframe) -->
                 <iframe id="haWidget" allowtransparency="true" scrolling="auto" src="https://www.helloasso.com/associations/commun-savoir/adhesions/adhesion-commun-savoir/widget" style="width: 100%; height: 750px; border: none;" onload="window.addEventListener('message', function(e) { const dataHeight = e.data.height; const haWidgetElement = document.getElementById('haWidget'); 
   if (dataHeight > parseFloat(haWidgetElement.height || 0)) { haWidgetElement.height = dataHeight + 'px';}})"></iframe>
             </div>
